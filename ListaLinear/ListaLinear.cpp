@@ -1,3 +1,4 @@
+/*Vitor Castro Dias*/
 
 #include <iostream>
 using namespace std;
@@ -122,8 +123,26 @@ void inserirElemento()
 
 void excluirElemento()
 {
+	int numEx, pos, loop, pElementos;
 
+		cout << "Digite o numero que voce quer excluir:";
+		cin >> numEx;
+		
+		pos = posicaoElemento(numEx);
 
+		if (pos != -1) {
+			pElementos = nElementos - 1;
+
+			for (loop = pos; loop <pElementos; loop++) {
+				lista[loop] = lista[loop + 1];
+			}
+			nElementos = nElementos--;
+		}
+		else
+		{
+			cout << "O elemento digitado nao foi encontrado" << endl;
+		}
+		
 }
 
 void buscarElemento()
